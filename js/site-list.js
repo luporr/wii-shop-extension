@@ -66,6 +66,7 @@ const siteList = [
     'azerty.nl',
     'marktplaats.nl',
     'mediamarkt.nl',
+    'microcenter.com',
     'zehrs.ca',
     'skroutz.gr',
     'zalando.dk',
