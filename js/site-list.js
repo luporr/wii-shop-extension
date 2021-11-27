@@ -67,6 +67,7 @@ const siteList = [
     'marktplaats.nl',
     'mediamarkt.nl',
     'zehrs.ca',
+    'skroutz.gr',
     'zalando.dk',
     'pricerunner.dk',
     'pricerunner.co.uk',
