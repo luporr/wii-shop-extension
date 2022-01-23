@@ -117,5 +117,4 @@ const siteList = [
     'u-mall.com.tw',
     'tw.bid.yahoo.com',
     'tw.mail.yahoo.com'
-    
 ]
