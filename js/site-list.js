@@ -96,5 +96,26 @@ const siteList = [
     'bauhaus.dk',
     'ilva.dk',
     'jysk.dk',
-    'fnac.fr'
+    'fnac.fr',
+    'pchome.com.tw',
+    'lttstore.com',
+    'shopee.tw',
+    'rakuten.com.tw',
+    'rakuten.com',
+    'ruten.com.tw',
+    'momoshop.com.tw',
+    'books.com.tw',
+    'tw.buy.yahoo.com',
+    'biggo.com.tw',
+    'feebee.com.tw',
+    'findprice.com.tw',
+    'eprice.com.tw',
+    'buy123.com.tw',
+    'pcone.com.tw',
+    'shop.cosmed.com.tw',
+    'etmall.com.tw',
+    'u-mall.com.tw',
+    'tw.bid.yahoo.com',
+    'tw.mail.yahoo.com'
+    
 ]
