@@ -12,9 +12,9 @@ chrome.storage.local.get({
 }, function (data) {
     document.querySelector('#music-picker').value = data.music
     if (data.musicEnabled) {
-        document.getElementById('music-toggle').innerText = 'Turn off music'
+        document.getElementById('music-toggle').innerText = 'Turn off background music'
     } else {
-        document.getElementById('music-toggle').innerText = 'Turn on music'
+        document.getElementById('music-toggle').innerText = 'Turn on background music'
     }
 })
 
