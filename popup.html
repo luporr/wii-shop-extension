@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <title>Wii Shop Channel Music - Settings</title>
     <style>
         html,
         body {
@@ -26,7 +27,11 @@
 
 <body>
     <div class="container-fluid">
-        <label for="music-picker" class="mt-2 form-label">Music Picker</label>
+
+        <button class="btn btn-sm btn-wii mt-3 w-100" id="music-toggle">...</button>
+        <div class="form-text">This toggles background music playback. You may need to switch tabs to take</div>
+
+        <label for="music-picker" class="mt-2 form-label">Music picker</label>
         <select id="music-picker" multiple size="6" class="form-select w-100" multiple>
             <option value="wii-shop-theme">Wii Shop Channel</option>
             <option value="wii-shop-banner-theme">Wii Shop Channel (Menu)</option>
@@ -36,7 +41,11 @@
             <option value="coconut-mall">Coconut Mall</option>
         </select>
 
-        <button class="btn btn-sm btn-wii mt-2 mb-2 w-100" data-link="https://discord.com/invite/59wfy5cNHw">Join Discord server</button>
+        <div class="mt-2">More stuff</div>
+
+        <button class="btn btn-sm btn-wii mt-2 w-100" data-link="https://discord.com/invite/59wfy5cNHw">Join Discord server</button>
+        <button class="btn btn-sm btn-wii mt-2 mb-3 w-100" data-link="https://github.com/corbindavenport/wii-shop-extension/">GitHub repository</button>
+
     </div>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/popup.js"></script>

@@ -1,5 +1,6 @@
 // The active background music track is stored here instead of themeAudio.src
 var currentMusic = ''
+var musicEnabled = true
 
 // Set MediaSession API info for Chrome media player popup
 if ('mediaSession' in navigator) {
@@ -15,17 +16,28 @@ themeAudio.loop = true
 
 // Get stored settings
 chrome.storage.local.get({
-    music: 'wii-shop-theme'
+    music: 'wii-shop-theme',
+    musicEnabled: true
 }, function (data) {
     currentMusic = chrome.extension.getURL('music/' + data.music + '.ogg')
+    console.log('Music enabled:', data.musicEnabled)
+    musicEnabled = data.musicEnabled
 })
 
-// Change music after settings change
+// Update settings after storage change
 chrome.storage.onChanged.addListener(function (changes, area) {
+    if (changes.musicEnabled) {
+        musicEnabled = changes.musicEnabled.newValue
+        if (!changes.musicEnabled) {
+            themeAudio.src = ''
+        }
+    }
     if (changes.music) {
         currentMusic = chrome.extension.getURL('music/' + changes.music.newValue + '.ogg')
-        themeAudio.src = chrome.extension.getURL('music/' + changes.music.newValue + '.ogg')
-        themeAudio.play()
+        if (musicEnabled) {
+            themeAudio.src = chrome.extension.getURL('music/' + changes.music.newValue + '.ogg')
+            themeAudio.play()
+        }
     }
 })
 
@@ -33,8 +45,8 @@ chrome.storage.onChanged.addListener(function (changes, area) {
 function checkMusic(tabs) {
     var url = new URL(tabs[0].url)
     var domain = url.hostname.toString().replace('www.', '')
-    console.log(domain)
-    if (siteList.includes(domain)) {
+    console.log(domain, musicEnabled)
+    if (siteList.includes(domain) && musicEnabled) {
         themeAudio.src = currentMusic
         themeAudio.play()
     } else {
