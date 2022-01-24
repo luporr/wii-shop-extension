@@ -26,13 +26,13 @@ document.getElementById('music-toggle').addEventListener('click', function() {
         console.log(data)
         if (data.musicEnabled) {
             // Turn off music
-            document.getElementById('music-toggle').innerText = 'Turn on music'
+            document.getElementById('music-toggle').innerText = 'Turn on background music'
             chrome.storage.local.set({
                 musicEnabled: false
             })
         } else {
             // Turn on music
-            document.getElementById('music-toggle').innerText = 'Turn off music'
+            document.getElementById('music-toggle').innerText = 'Turn off background music'
             chrome.storage.local.set({
                 musicEnabled: true
             })
