@@ -45,21 +45,24 @@ chrome.storage.onChanged.addListener(function (changes, area) {
 function checkMusic(tabs) {
     var url = new URL(tabs[0].url)
     var domain = url.hostname.toString().replace('www.', '')
-    console.log(domain, musicEnabled)
     if (siteList.includes(domain) && musicEnabled) {
-        themeAudio.src = currentMusic
+        if (themeAudio.src != currentMusic) {
+            themeAudio.src = currentMusic
+        }
         themeAudio.play()
     } else {
-        // The src element is deleted so Chromium browsers won't show a playback notification anymore
+        // The source value is deleted so Chromium browsers won't show a playback notification anymore
         themeAudio.src = ''
     }
 }
 
 // Detect new page loads in active tab, if the domain matches a shopping site, play music
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo) {
-    chrome.tabs.query({ active: true, lastFocusedWindow: true }, function (tabs) {
-        checkMusic(tabs)
-    })
+    if (changeInfo.status === 'complete') {
+        chrome.tabs.query({ active: true, lastFocusedWindow: true }, function (tabs) {
+            checkMusic(tabs)
+        })
+    }
 })
 
 // Detect shopping tab becoming inactive/closed, if the domain matches a shopping site, play music
