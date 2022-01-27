@@ -67,6 +67,7 @@ const siteList = [
     'mindfactory.de',
     'mirapodo.de',
     'mobile.de',
+    'muji.eu',
     'mydealz.de',
     'mytoys.de',
     'nike.com',
